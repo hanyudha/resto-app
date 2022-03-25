@@ -1,18 +1,16 @@
 <template>
-  <div class="home">
+  <div>
     <NavbarComponent />
     <div class="container">
-      <h1>Home</h1>
+      <h1>Cart List</h1>
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import NavbarComponent from "@/components/NavbarComponent.vue";
-
 export default {
-  name: "HomeView",
+  name: "CartView",
   components: {
     NavbarComponent,
   },
