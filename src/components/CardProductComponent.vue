@@ -1,11 +1,11 @@
 <template>
-  <div class="card">
+  <div class="card shadow card-product">
     <!--<img v-bind:src=" '../assets/images/' + product.gambar " class="card-img-top" />-->
-    <img :src="require('@/assets/images/' +product.gambar)" />
+    <img :src="require('@/assets/images/'+product.gambar)" class="rounded" />
     <div class="card-body">
       <h5 class="card-title">{{ product.nama }}</h5>
-      <p class="card-text">Some quick Example</p>
-      <a href="#" class="btn btn-primary">Go Somewhere</a>
+      <p class="card-text">Harga: Rp. {{ product.harga }}</p>
+      <router-link class="btn btn-success" :to="'/foods/'+product.id"><b-icon-cart></b-icon-cart> Pesan</router-link>
     </div>
   </div>
 </template>

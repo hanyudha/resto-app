@@ -17,7 +17,9 @@
                 favorit anda
               </h3>
               <br />
-              <button class="btn btn-lg btn-success">Pesan</button>
+              <router-link to="/foods" class="btn btn-lg btn-success">
+                Pesan
+              </router-link>
             </div>
           </div>
         </div>

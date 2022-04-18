@@ -5,7 +5,7 @@
       <HeroComponent />
       <div class="row mt-4">
         <div class="col"><h2>Best Foods</h2></div>
-        <div class="col">
+        <div class="col text-end">
           <router-link to="/foods" class="btn btn-success float-right"
             ><b-icon-eye></b-icon-eye> Lihat semua</router-link
           >
