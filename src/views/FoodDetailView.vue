@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row mt-3">
         <div class="col-md-6">
           <img :src="'/img/' + products.gambar" class="img-fluid shadow" />
         </div>
@@ -36,10 +36,16 @@
           <hr />
           <h4>Harga: <strong>Rp. {{ products.harga }}</strong></h4>
           <form>
-            <div class="form-group">
+            <div class="form-group mt-3">
               <label for="jumlah_pemesanan">Jumlah Pesanan</label>
               <input type="number" class="form-control" />
             </div>
+            <div class="form-group mt-3">
+              <label for="keterangan">Keterangan</label>
+            <textarea class="form-control" placeholder="Keterangan spt: Pedas, nasi setengah ..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success mt-3"><b-icon-cart></b-icon-cart> Pesan</button>
           </form>
         </div>
       </div>
