@@ -35,17 +35,17 @@
           </h2>
           <hr />
           <h4>Harga: <strong>Rp. {{ products.harga }}</strong></h4>
-          <form>
-            <div class="form-group mt-3">
+          <form v-on:submit.prevent>
+            <div class="form-group mt-4">
               <label for="jumlah_pemesanan">Jumlah Pesanan</label>
-              <input type="number" class="form-control" />
+              <input type="number" class="form-control" v-model="pesan.jumlah_pemesanan" />
             </div>
             <div class="form-group mt-3">
               <label for="keterangan">Keterangan</label>
-            <textarea class="form-control" placeholder="Keterangan spt: Pedas, nasi setengah ..."></textarea>
+            <textarea v-model="pesan.keterangan" class="form-control" placeholder="Keterangan spt: Pedas, nasi setengah ..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-success mt-3"><b-icon-cart></b-icon-cart> Pesan</button>
+            <button type="submit" class="btn btn-success mt-3" @click="pemesanan"><b-icon-cart></b-icon-cart> Pesan</button>
           </form>
         </div>
       </div>
@@ -66,11 +66,21 @@ export default {
   data() {
     return {
       products: [],
+      pesan: {},
     };
   },
   methods: {
     setProduct(data) {
       this.products = data;
+    },
+    pemesanan(){
+      this.pesan.product = this.products;
+      axios
+      .post("http://localhost:3000/keranjangs", this.pesan)
+      .then(() => {
+        console.log("Berhasil");
+      })
+      .catch((err) => console.log(err))
     },
   },
   mounted() {
