@@ -28,7 +28,7 @@
             <router-link class="nav-link" to="/cart"
               >Cart <b-icon-cart
             />
-            <span class="badge bg-success mx-2"> 0 
+            <span class="badge bg-success mx-2"> {{jumlah_pesanans.length}}
             </span></router-link>
           </li>
         </ul>
@@ -38,8 +38,25 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "NavbarComponent",
+  data() {
+    return{
+      jumlah_pesanans: []
+    }
+  },
+  methods: {
+    setJumlah(data){
+      this.jumlah_pesanans = data
+    }
+  },
+  mounted(){
+    axios
+    .get("http://localhost:3000/keranjangs")
+    .then((response) => this.setJumlah(response.data))
+    .catch((error) => console.log(error))
+  }
 };
 </script>
 
