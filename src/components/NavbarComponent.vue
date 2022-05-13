@@ -28,7 +28,7 @@
             <router-link class="nav-link" to="/cart"
               >Cart <b-icon-cart
             />
-            <span class="badge bg-success mx-2"> {{jumlah_pesanans.length}}
+            <span class="badge bg-success mx-2"> {{ updateKeranjang ? updateKeranjang.length : jumlah_pesanans.length}}
             </span></router-link>
           </li>
         </ul>
@@ -46,6 +46,7 @@ export default {
       jumlah_pesanans: []
     }
   },
+  props: ['updateKeranjang'],
   methods: {
     setJumlah(data){
       this.jumlah_pesanans = data
